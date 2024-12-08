@@ -22,7 +22,13 @@ export function createWaveformVisualization(sampleIdx, divId) {
     Object.keys(audioOptions).forEach(option => {
         const button = document.createElement('button'); // Create a button for each option
         button.textContent = option;
-        button.style.margin = '5px'; // Optional styling for buttons
+        button.style.margin = '5px';
+        button.style.padding = '5px 10px';
+        button.style.border = 'none';
+        button.style.borderRadius = '4px';
+        button.style.backgroundColor = '#6200ea';
+        button.style.color = '#fff';
+        button.style.cursor = 'pointer';
       
         // Add event listener to load the selected audio when the button is clicked
         button.addEventListener('click', () => {
