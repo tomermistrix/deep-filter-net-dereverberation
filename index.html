@@ -1,181 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation">
-  <meta name="keywords" content="deep-filtering, real-time-processing, speech-dereverberation, speech-enhancement.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 2em;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
 
+    h1 {
+      margin-bottom: 0.5em;
+      color: #222;
+    }
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+    .authors {
+      margin-bottom: 1em;
+      font-size: 1.1em;
+    }
 
-  <link rel="icon" href="./static/images/favicon.svg">
+    .authors sup {
+      font-size: 0.8em;
+    }
 
+    .affiliations {
+      margin-bottom: 2em;
+      font-size: 1em;
+    }
 
+    .abstract {
+      margin-bottom: 3em;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .audio-table {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 2em auto;
+      border-collapse: collapse;
+    }
+
+    .audio-table th, .audio-table td {
+      padding: 1em;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
+  <h1>Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation</h1>
 
+  <section class="authors">
+    <p>
+      <strong><span>Tomer Rosenbaum<sup>1,2</sup>, Emil Winebrand<sup>3</sup>, Omer Cohen<sup>3</sup>, Israel Cohen<sup>1</sup></span></strong>
+    </p>
+  </section>
 
+  <section class="affiliations">
+    <p><sup>1</sup> Technion -- Israel Institute of Technology</p>
+    <p><sup>2</sup> MISTRIX Ltd.</p>
+    <p><sup>3</sup> Insoundz Ltd.</p>
+  </section>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <div class="column has-text-centered" style="line-height: 0.1em;">
-          <h1 class="title is-1 publication-title" style="margin-bottom: 0; font-family: 'Optima'; color: #414a4c;">
-    Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation
-</h1>
-          </div> 
-          
-          <div class="is-size-4 publication-authors">
-            <span class="author-block">
-              Tomer Rosenbaum,</span>
-            <span class="author-block">
-              Emil Winebrand,</span>
-            <span class="author-block">
-              Omer Cohen,</span>
-            <span class="author-block">
-              Israel Cohen</span>
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      Deep learning has revolutionized speech enhancement, enabling impressive high-quality noise reduction and dereverberation. However, state-of-the-art methods often demand substantial computational resources, hindering their deployment on edge devices and in real-time applications. Computationally efficient approaches like deep filtering and Deep Filter Net offer an attractive alternative by predicting linear filters instead of directly estimating the clean speech. While Deep Filter Net excels in noise reduction, its dereverberation performance remains limited. In this paper, we present a generalized framework for computationally efficient speech enhancement and, based on this framework, identify an inherent constraint within Deep Filter Net that hinders its dereverberation capabilities. We propose an extension to the Deep Filter Net framework designed to overcome this limitation, demonstrating significant improvements in dereverberation performance while maintaining competitive noise reduction quality. Our experimental results highlight the potential of this enhanced framework for real-time speech enhancement on resource-constrained devices.
+    </p>
+  </section>
 
-          </div>
+  <section>
+    <h2>Audio Samples</h2>
+    <table class="audio-table">
+      <thead>
+        <tr>
+          <th>Clean</th>
+          <th>Observed</th>
+          <th>Enhanced v.1</th>
+          <th>Enhanced v.2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <audio controls>
+              <source src="audio/clean_sample_1.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls>
+              <source src="audio/observed_sample_1.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls>
+              <source src="audio/enhanced_v1_sample_1.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls>
+              <source src="audio/enhanced_v2_sample_1.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <audio controls>
+              <source src="audio/clean_sample_2.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls>
+              <source src="audio/observed_sample_2.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls>
+              <source src="audio/enhanced_v1_sample_2.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+          <td>
+            <audio controls>
+              <source src="audio/enhanced_v2_sample_2.wav" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+          </td>
+        </tr>
+        <!-- Add more rows as needed for additional samples -->
+      </tbody>
+    </table>
+  </section>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Technion—Israel Institute of Technology</span>
-          </div>
-
-</section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div style="display: flex; justify-content: center;">
-    <div class="column is-five-fifths">
-
-    <div class="hero-body">
-
-      <h2 class="subtitle has-text-centered" style="font-size: 20px;">
-        <p>
-        Deep learning has revolutionized speech enhancement, enabling impressive high-quality noise reduction and dereverberation. However, state-of-the-art methods often demand substantial computational resources, hindering their deployment on edge devices and in real-time applications. Computationally efficient approaches like deep filtering and Deep Filter Net offer an attractive alternative by predicting linear filters instead of directly estimating the clean speech. While Deep Filter Net excels in noise reduction, its dereverberation performance remains limited. In this paper, we present a generalized framework for computationally efficient speech enhancement and, based on this framework, identify an inherent constraint within Deep Filter Net that hinders its dereverberation capabilities. We propose an extension to the Deep Filter Net framework designed to overcome this limitation, demonstrating significant improvements in dereverberation performance while maintaining competitive noise reduction quality. Our experimental results highlight the potential of this enhanced framework for real-time speech enhancement on resource-constrained devices.
-        </p>
-      </h2>
-            
-      <div class="container is-max-desktop">
-<div class="columns is-centered has-text-centered">
-   <!--<div class="comparison-block">-->
-     <!--<br>-->
-         <!--<div class="container is-max-desktop">-->
-      <!--<div class="columns is-centered has-text-centered">-->
-
-          <!--<h2 class="title is-3">Example</h2>-->
-        
-      <!--</div> -->
-  <!--</div>-->
-     <!--<br>-->
-
-                    <div class="container is-max-desktop">
-
-<br><br>
-<h4>Example: Blind face image restoration</h4>
-<img-comparison-slider>
-  <img slot="first" src="static/images/blind/y/00000137.png" width="512"/>
-  <img slot="second" src="static/images/blind/pmrf/00000137.png" width="512"/>
-</img-comparison-slider>
-  </div>
-    </div>
-    <!--</div>-->
-    <br><br><br>
-      <h2 class="subtitle has-text-centered" style="font-size: 20px;">
-      Given a degraded image (e.g., noisy, blurry), PMRF first predicts the posterior mean (the reconstruction that attains the smallest possible MSE). Then, the result is transported to a high-quality image using a rectified flow model. PMRF is trained in two consequtive stages, where each stage only requires minimizing a simple MSE loss.
-      </h2>
-      <img src="static/flow.png" alt="Centered Image" style="max-width: 100%;">
-      </div>
-      </div>
-    </div>
-  </div>
-        </div>
-
-</section>
-
-          <section id="audio-samples">
-      <h2>Audio Samples</h2>
-      <div class="audio-samples">
-        <div class="audio-sample">
-          <h3>Clean</h3>
-          <audio controls>
-            <source src="audio/clean_sample_1.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-
-        <div class="audio-sample">
-          <h3>Observed</h3>
-          <audio controls>
-            <source src="audio/observed_sample_1.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-
-        <div class="audio-sample">
-          <h3>Enhanced v.1</h3>
-          <audio controls>
-            <source src="audio/enhanced_v1_sample_1.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-
-        <div class="audio-sample">
-          <h3>Enhanced v.2</h3>
-          <audio controls>
-            <source src="audio/enhanced_v2_sample_1.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-
-  
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title is-3">BibTeX</h2>
-    <pre><code>@article{ohayon2024pmrf,
-  author    = {Guy Ohayon and Tomer Michaeli and Michael Elad},
-  title     = {Posterior-Mean Rectified Flow: Towards Minimum MSE Photo-Realistic Image Restoration},
-  journal   = {arXiv preprint arXiv:2410.00418},
-  year      = {2024},
-  url       = {https://arxiv.org/abs/2410.00418}
-}</code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            hello
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+  <footer>
+    <p>&copy; 2024 Technion -- Israel Institute of Technology. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
