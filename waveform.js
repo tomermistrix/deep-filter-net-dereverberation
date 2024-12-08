@@ -32,13 +32,9 @@ export function createWaveformVisualization(sampleIdx) {
         optionsContainer.appendChild(button); // Append the button to the options container
       });
       
-      // Load the default audio file (you can change this to any of the options)
-      wavesurfer.load(audioOptions['Observed']);
-      
-      
       
       // Optional: Play/Pause the waveform when clicked
-      wavesurfer.on('click', () => {
+    wavesurfer.on('click', () => {
         wavesurfer.playPause();
       });
 
