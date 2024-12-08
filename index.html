@@ -106,25 +106,26 @@
     <p><sup>3</sup> Insoundz Ltd.</p>
   </section>
 
-  <section class="abstract">
+  <section class="abstract" id="abstract">
     <h2>Abstract</h2>
     <p>
       Deep learning has revolutionized speech enhancement, enabling impressive high-quality noise reduction and dereverberation. However, state-of-the-art methods often demand substantial computational resources, hindering their deployment on edge devices and in real-time applications. Computationally efficient approaches like deep filtering and Deep Filter Net offer an attractive alternative by predicting linear filters instead of directly estimating the clean speech. While Deep Filter Net excels in noise reduction, its dereverberation performance remains limited. In this paper, we present a generalized framework for computationally efficient speech enhancement and, based on this framework, identify an inherent constraint within Deep Filter Net that hinders its dereverberation capabilities. We propose an extension to the Deep Filter Net framework designed to overcome this limitation, demonstrating significant improvements in dereverberation performance while maintaining competitive noise reduction quality. Our experimental results highlight the potential of this enhanced framework for real-time speech enhancement on resource-constrained devices.
     </p>
   </section>
 
-  <section class="abstract">
+  <section class="abstract" id="sectionaudiosamples">
     <h2>Audio Samples</h2>
-    <div id="audio-samples">
-        <script type="module">
-          import {createWaveformVisualization} from './waveform.js'
+    <div id="audio-samples-rev"></div>
+    <div id="audio-samples-noiserev"></div>
+    <script type="module">
+      import {createWaveformVisualization} from './waveform.js'
 
-          for (let i = 0; i < 2; i++) {
-            createWaveformVisualization(0);
-          }
-          
-        </script>
-    </div>
+      for (let i = 0; i < 2; i++) {
+        createWaveformVisualization(0, 'audio-samples-rev');
+        createWaveformVisualization(0, 'audio-samples-noiserev');
+      }
+      
+    </script>
     <table class="audio-table">
       <thead>
         <tr>

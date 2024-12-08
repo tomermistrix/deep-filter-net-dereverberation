@@ -1,4 +1,4 @@
-export function createWaveformVisualization(sampleIdx) {
+export function createWaveformVisualization(sampleIdx, divId) {
     const AUDIO_PATH = `audio/${sampleIdx.toString()}`
     const audioOptions = {
         'Observed': `${AUDIO_PATH}/observed.wav`,
@@ -7,7 +7,7 @@ export function createWaveformVisualization(sampleIdx) {
         'Enhanced (two-steps)': `${AUDIO_PATH}/enhanced_two.wav`,
       };
     
-    const samplesDiv = document.getElementById('audio-samples');
+    const samplesDiv = document.getElementById(divId);
     
     const wavesurfer = WaveSurfer.create({
         container: samplesDiv,
