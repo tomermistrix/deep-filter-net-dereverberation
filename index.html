@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation</title>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script type="module" src="waveform.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -114,6 +116,11 @@
 
   <section class="abstract">
     <h2>Audio Samples</h2>
+    <div id="audio-samples">
+        <script>
+          createWaveformVisualization(0);
+        </script>
+    </div>
     <table class="audio-table">
       <thead>
         <tr>
@@ -182,7 +189,7 @@
   </section>
 
       <div class="section bibtex-section">
-        <h2>Cite This Work</h2>
+        <h2>Cite this Work</h2>
         <pre id="bibtex">
           @inproceedings{rosenbaum2024dfndereverb,
             title={Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation},
