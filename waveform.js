@@ -35,10 +35,16 @@ function getSingleWaveform(audioOptions) {
     const waveformContainer = document.createElement('div');
     const wavesurfer = WaveSurfer.create({
         container: waveformContainer,
-        waveColor: 'rgb(200, 0, 200)',
-        progressColor: 'rgb(100, 0, 100)',
+        waveColor: 'rgb(98, 0, 234)',
+        progressColor: 'rgb(55, 0, 179)',
         url: audioOptions['Observed'],
         mediaControls: true,
+        // Set a bar width
+        barWidth: 2,
+        // Optionally, specify the spacing between bars
+        barGap: 1,
+        // And the bar radius
+        barRadius: 2,
       })
     const optionsContainer = document.createElement('div');
     Object.keys(audioOptions).forEach(option => {
