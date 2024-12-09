@@ -57,6 +57,13 @@ function getSingleWaveform(audioOptions) {
         button.addEventListener('click', () => {
           wavesurfer.load(audioOptions[option]); // Load the corresponding audio file
         });
+        
+        document.querySelectorAll('.waveform-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked button
+        button.classList.add('active');
       
         optionsContainer.appendChild(button); // Append the button to the options container
       });
