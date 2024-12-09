@@ -47,32 +47,34 @@ function getSingleWaveform(audioOptions) {
         barRadius: 2,
       })
     const optionsContainer = document.createElement('div');
+
     Object.keys(audioOptions).forEach(option => {
-        const button = document.createElement('button'); // Create a button for each option
+        const button = document.createElement('button');
         button.textContent = option;
         button.className = 'waveform-button';
-        // button.style.margin = '5px';
-      
-        // Add event listener to load the selected audio when the button is clicked
-        button.addEventListener('click', () => {
-          wavesurfer.load(audioOptions[option]); // Load the corresponding audio file
-        });
-        
-        document.querySelectorAll('.waveform-button').forEach(btn => {
-            btn.classList.remove('active');
-        });
+        optionsContainer.appendChild(button);
+    });
 
-        // Add 'active' class to the clicked button
-        button.classList.add('active');
-      
-        optionsContainer.appendChild(button); // Append the button to the options container
-      });
+    const buttons = optionsContainer.querySelectorAll('.waveform-button');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove 'active' class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+
+            // Load the corresponding audio file
+            wavesurfer.load(audioOptions[button.textContent]);
+        });
+    });
       
       
       // Optional: Play/Pause the waveform when clicked
-    wavesurfer.on('click', () => {
-        wavesurfer.playPause();
-      });
+    // wavesurfer.on('click', () => {
+    //     wavesurfer.playPause();
+    //   });
     
     waveformContainer.appendChild(optionsContainer);
     return waveformContainer;
