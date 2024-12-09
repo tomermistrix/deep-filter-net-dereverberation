@@ -57,6 +57,9 @@ function getSingleWaveform(audioOptions) {
 
     const buttons = optionsContainer.querySelectorAll('.waveform-button');
 
+    buttons[0].classList.add('active');
+    wavesurfer.load(audioOptions[buttons[0].textContent]);
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove 'active' class from all buttons
