@@ -3,8 +3,8 @@ export function createWaveformVisualization(sampleIdx) {
     // Create a new row
     const row = document.createElement('tr');
     // Create two cells for the waveforms
-    const waveform1 = getSingleWaveform(getAudioOptions('noisy-rev'));
-    const waveform2 = getSingleWaveform(getAudioOptions('rev')); 
+    const waveform1 = getSingleWaveform(getAudioOptions('noisy-rev', sampleIdx));
+    const waveform2 = getSingleWaveform(getAudioOptions('rev', sampleIdx)); 
     // Append the waveforms to the row
     row.appendChild(waveform1);
     row.appendChild(waveform2);
@@ -13,7 +13,7 @@ export function createWaveformVisualization(sampleIdx) {
 }
 
 
-function getAudioOptions(type) {
+function getAudioOptions(type, sampleIdx) {
     const AUDIO_PATH = `audio/${sampleIdx.toString()}`;
     // const AUDIO_PATH = `audio/${type}/${sampleIdx.toString()}`;
     const audioOptions = {
