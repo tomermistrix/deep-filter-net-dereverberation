@@ -65,6 +65,31 @@
       width: 100%;
     }
 
+    /* Style for the container holding the button */
+    .pdf-button-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Style for the button */
+    .pdf-button {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Hover effect for the button */
+    .pdf-button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+
     .waveform-button {
         display: block;            /* Makes each button take a full line (vertical layout) */
         width: 100%;               /* Makes the button take the full width of the container */
@@ -124,10 +149,14 @@
   </section>
 
   <section class="affiliations">
-    <p><sup>1</sup> Technion - Israel Institute of Technology</p>
-    <p><sup>2</sup> MISTRIX Ltd.</p>
-    <p><sup>3</sup> Insoundz Ltd.</p>
+    <p><sup>1</sup> Technion - Israel Institute of Technology, Haifa, Israel</p>
+    <p><sup>2</sup> MISTRIX Ltd., Tel Aviv, Israel</p>
+    <p><sup>3</sup> Insoundz Ltd., Tel Aviv, Israel</p>
   </section>
+
+  <div class="pdf-button-container">
+    <button class="pdf-button" onclick="window.open('https://www.mistrix.co', '_blank')">Paper</button>
+  </div>
 
   <section class="abstract" id="abstract">
     <h2>Abstract</h2>
@@ -149,7 +178,7 @@
     <table class="audio-table" id="audio-samples-table">
       <thead>
         <tr>
-          <th>Noisy reverberant</th>
+          <th>Noisy Reverberant</th>
           <th>Reverberant</th>
         </tr>
       </thead>
@@ -162,7 +191,7 @@
           @inproceedings{rosenbaum2024dfndereverb,
             title={Deep Learning Framework for Efficient Real-Time Speech Enhancement and Dereverberation},
             author={Tomer Rosenbaum, Emil Winebrand, Omer Cohen, and Israel Cohen},
-            booktitle={Journal Name},
+            booktitle={Sensors},
             year={2024}
           }
                   </pre>
