@@ -65,6 +65,25 @@
       width: 100%;
     }
 
+    .waveform-button {
+        display: block;            /* Makes each button take a full line (vertical layout) */
+        width: 100%;               /* Makes the button take the full width of the container */
+        padding: 10px 20px;        /* Adds some padding for better appearance */
+        margin: 8px 0;             /* Adds space between buttons */
+        background-color: #6200ea; /* A nice purple background color */
+        color: white;              /* White text for contrast */
+        border: none;              /* Removes the default border */
+        border-radius: 5px;        /* Rounded corners for a modern look */
+        font-size: 16px;           /* Increases the font size for readability */
+        cursor: pointer;           /* Changes the cursor to a pointer on hover */
+        text-align: center;        /* Centers the button text */
+        transition: background-color 0.3s ease; /* Smooth background color transition */
+    }
+
+    .waveform-button:hover {
+        background-color: #3700b3; /* Darker shade on hover */
+    }
+
     .bibtex-section {
       margin-bottom: 3em;
       text-align: justify;

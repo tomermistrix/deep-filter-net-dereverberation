@@ -44,7 +44,8 @@ function getSingleWaveform(audioOptions) {
     Object.keys(audioOptions).forEach(option => {
         const button = document.createElement('button'); // Create a button for each option
         button.textContent = option;
-        button.style.margin = '5px';
+        button.className = 'waveform-button';
+        // button.style.margin = '5px';
       
         // Add event listener to load the selected audio when the button is clicked
         button.addEventListener('click', () => {
