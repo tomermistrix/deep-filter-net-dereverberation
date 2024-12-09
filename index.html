@@ -115,17 +115,22 @@
 
   <section class="abstract" id="sectionaudiosamples">
     <h2>Audio Samples</h2>
-    <div id="audio-samples-rev"></div>
-    <div id="audio-samples-noiserev"></div>
     <script type="module">
       import {createWaveformVisualization} from './waveform.js'
 
       for (let i = 0; i < 2; i++) {
-        createWaveformVisualization(0, 'audio-samples-rev');
-        createWaveformVisualization(0, 'audio-samples-noiserev');
+        createWaveformVisualization(0);
       }
       
     </script>
+    <table class="audio-table" id="audio-samples-table">
+      <thead>
+        <tr>
+          <th>Noisy reverberant</th>
+          <th>Reverberant</th>
+        </tr>
+      </thead>
+    </table>
     <table class="audio-table">
       <thead>
         <tr>

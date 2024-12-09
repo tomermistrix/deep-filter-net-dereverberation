@@ -1,4 +1,4 @@
-export function createWaveformVisualization(sampleIdx, divId) {
+export function createWaveformVisualization(sampleIdx) {
     const AUDIO_PATH = `audio/${sampleIdx.toString()}`
     const audioOptions = {
         'Observed': `${AUDIO_PATH}/observed.wav`,
@@ -7,28 +7,44 @@ export function createWaveformVisualization(sampleIdx, divId) {
         'Enhanced (two-steps)': `${AUDIO_PATH}/enhanced_two.wav`,
       };
     
-    const samplesDiv = document.getElementById(divId);
+    // const samplesDiv = document.getElementById(divId);
+    const samplesTable = document.getElementById('audio-samples-table');
+
+    // Create a new row
+    const row = document.createElement('tr');
+
+    // Create two cells for the waveforms
+    const cell1 = document.createElement('td');
+    const cell2 = document.createElement('td');
     
+    const waveform1 = getSingleWaveform(audioOptions);
+    const waveform2 = getSingleWaveform(audioOptions); 
+    
+    cell1.appendChild(waveform1);
+    cell2.appendChild(waveform2);
+    
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+
+    // Append the row to the table
+    samplesTable.appendChild(row);
+}
+
+
+function getSingleWaveform(audioOptions) {
+    const waveformContainer = document.createElement('div');
     const wavesurfer = WaveSurfer.create({
-        container: samplesDiv,
+        container: waveformContainer,
         waveColor: 'rgb(200, 0, 200)',
         progressColor: 'rgb(100, 0, 100)',
         url: audioOptions['Observed'],
         mediaControls: true,
       })
-
     const optionsContainer = document.createElement('div');
-    
     Object.keys(audioOptions).forEach(option => {
         const button = document.createElement('button'); // Create a button for each option
         button.textContent = option;
         button.style.margin = '5px';
-        button.style.padding = '5px 10px';
-        button.style.border = 'none';
-        button.style.borderRadius = '4px';
-        button.style.backgroundColor = '#6200ea';
-        button.style.color = '#fff';
-        button.style.cursor = 'pointer';
       
         // Add event listener to load the selected audio when the button is clicked
         button.addEventListener('click', () => {
@@ -43,6 +59,7 @@ export function createWaveformVisualization(sampleIdx, divId) {
     wavesurfer.on('click', () => {
         wavesurfer.playPause();
       });
-
-    samplesDiv.appendChild(optionsContainer);
+    
+    waveformContainer.appendChild(optionsContainer);
+    return waveformContainer;
 }
