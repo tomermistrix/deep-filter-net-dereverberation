@@ -1,33 +1,29 @@
 export function createWaveformVisualization(sampleIdx) {
-    const AUDIO_PATH = `audio/${sampleIdx.toString()}`
+    const samplesTable = document.getElementById('audio-samples-table');
+    // Create a new row
+    const row = document.createElement('tr');
+    // Create two cells for the waveforms
+    const waveform1 = getSingleWaveform(getAudioOptions('noisy-rev'));
+    const waveform2 = getSingleWaveform(getAudioOptions('rev')); 
+    // Append the waveforms to the row
+    row.appendChild(waveform1);
+    row.appendChild(waveform2);
+    // Append the row to the table
+    samplesTable.appendChild(row);
+}
+
+
+function getAudioOptions(type) {
+    const AUDIO_PATH = `audio/${sampleIdx.toString()}`;
+    // const AUDIO_PATH = `audio/${type}/${sampleIdx.toString()}`;
     const audioOptions = {
         'Observed': `${AUDIO_PATH}/observed.wav`,
         'Clean': `${AUDIO_PATH}/clean.wav`,
         'Enhanced (simultaneous)': `${AUDIO_PATH}/enhanced_simult.wav`,
         'Enhanced (two-steps)': `${AUDIO_PATH}/enhanced_two.wav`,
-      };
+    };
     
-    // const samplesDiv = document.getElementById(divId);
-    const samplesTable = document.getElementById('audio-samples-table');
-
-    // Create a new row
-    const row = document.createElement('tr');
-
-    // Create two cells for the waveforms
-    const cell1 = document.createElement('td');
-    const cell2 = document.createElement('td');
-    
-    const waveform1 = getSingleWaveform(audioOptions);
-    const waveform2 = getSingleWaveform(audioOptions); 
-    
-    cell1.appendChild(waveform1);
-    cell2.appendChild(waveform2);
-    
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-
-    // Append the row to the table
-    samplesTable.appendChild(row);
+    return audioOptions
 }
 
 
@@ -73,12 +69,9 @@ function getSingleWaveform(audioOptions) {
         });
     });
       
-      
-      // Optional: Play/Pause the waveform when clicked
-    // wavesurfer.on('click', () => {
-    //     wavesurfer.playPause();
-    //   });
     
     waveformContainer.appendChild(optionsContainer);
-    return waveformContainer;
+    const cell = document.createElement('td');
+    cell.appendChild(waveformContainer)
+    return cell;
 }
