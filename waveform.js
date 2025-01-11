@@ -1,5 +1,5 @@
-import WaveSurfer from 'wavesurfer.js'
-import Spectrogram from 'wavesurfer.js/dist/plugins/spectrogram.esm.js'
+import WaveSurfer from './node_modules/wavesurfer.js';
+import Spectrogram from './node_modules/wavesurfer.js/dist/plugins/spectrogram.esm.js'
 
 export function createWaveformVisualization(sampleIdx) {
     const samplesTable = document.getElementById('audio-samples-table');
