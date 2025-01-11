@@ -29,6 +29,7 @@ function getAudioOptions(type, sampleIdx) {
 
 function getSingleWaveform(audioOptions) {
     const waveformContainer = document.createElement('div');
+    const waveformSpecContainer = document.createElement('div');
     const wavesurfer = WaveSurfer.create({
         container: waveformContainer,
         waveColor: 'rgb(98, 0, 234)',
@@ -44,7 +45,7 @@ function getSingleWaveform(audioOptions) {
         plugins: [
             WaveSurfer.spectrogram.create({
                 wavesurfer: wavesurfer,
-                container: "#wave-spectrogram",
+                container: waveformSpecContainer,
                 labels: true,
                 height: 256,
             })
@@ -77,8 +78,8 @@ function getSingleWaveform(audioOptions) {
         });
     });
       
-    
     waveformContainer.appendChild(optionsContainer);
+    waveformContainer.appendChild(waveformSpecContainer);
     const cell = document.createElement('td');
     cell.appendChild(waveformContainer)
     return cell;
