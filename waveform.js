@@ -46,7 +46,7 @@ function getSingleWaveform(audioOptions) {
     // Initialize the Spectrogram plugin
     wavesurfer.registerPlugin(
         WaveSurfer.Spectrogram.create({
-        labels: true,
+        labels: false,
         height: 100,
         splitChannels: true,
         scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
