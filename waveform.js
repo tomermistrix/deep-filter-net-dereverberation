@@ -42,15 +42,21 @@ function getSingleWaveform(audioOptions) {
         barGap: 1,
         // And the bar radius
         barRadius: 2,
-        plugins: [
-            Spectrogram.create({
-                wavesurfer: wavesurfer,
-                container: waveformSpecContainer,
-                labels: true,
-                height: 256,
-            })
-        ]
       })
+    
+    // Initialize the Spectrogram plugin
+    wavesurfer.registerPlugin(
+        Spectrogram.create({
+        labels: true,
+        height: 200,
+        splitChannels: true,
+        scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
+        frequencyMax: 8000,
+        frequencyMin: 0,
+        fftSamples: 1024,
+        labelsBackground: 'rgba(0, 0, 0, 0.1)',
+        }),
+  )
     const optionsContainer = document.createElement('div');
 
     Object.keys(audioOptions).forEach(option => {
