@@ -32,7 +32,6 @@ function getAudioOptions(type, sampleIdx) {
 
 function getSingleWaveform(audioOptions) {
     const waveformContainer = document.createElement('div');
-    const waveformSpecContainer = document.createElement('div');
     const wavesurfer = WaveSurfer.create({
         container: waveformContainer,
         waveColor: 'rgb(98, 0, 234)',
@@ -48,18 +47,18 @@ function getSingleWaveform(audioOptions) {
       })
     
     // Initialize the Spectrogram plugin
-    wavesurfer.registerPlugin(
-        Spectrogram.create({
-        labels: true,
-        height: 200,
-        splitChannels: true,
-        scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
-        frequencyMax: 24000,
-        frequencyMin: 0,
-        fftSamples: 1024,
-        labelsBackground: 'rgba(0, 0, 0, 0.1)',
-        }),
-  )
+//     wavesurfer.registerPlugin(
+//         Spectrogram.create({
+//         labels: true,
+//         height: 200,
+//         splitChannels: true,
+//         scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
+//         frequencyMax: 24000,
+//         frequencyMin: 0,
+//         fftSamples: 1024,
+//         labelsBackground: 'rgba(0, 0, 0, 0.1)',
+//         }),
+//   )
     const optionsContainer = document.createElement('div');
 
     Object.keys(audioOptions).forEach(option => {
@@ -88,7 +87,6 @@ function getSingleWaveform(audioOptions) {
     });
       
     waveformContainer.appendChild(optionsContainer);
-    waveformContainer.appendChild(waveformSpecContainer);
     const cell = document.createElement('td');
     cell.appendChild(waveformContainer)
     return cell;
