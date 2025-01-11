@@ -44,6 +44,14 @@ function getSingleWaveform(audioOptions) {
         barGap: 1,
         // And the bar radius
         barRadius: 2,
+        plugins: [
+            WaveSurfer.spectrogram.create({
+                wavesurfer: wavesurfer,
+                container: waveformContainer,
+                labels: true,
+                height: 256,
+            })
+        ]
       })
     
     // Initialize the Spectrogram plugin
