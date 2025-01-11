@@ -14,13 +14,15 @@ export function createWaveformVisualization(sampleIdx) {
 
 
 function getAudioOptions(type, sampleIdx) {
-    const AUDIO_PATH = `audio/${sampleIdx.toString()}`;
-    // const AUDIO_PATH = `audio/${type}/${sampleIdx.toString()}`;
+    // const AUDIO_PATH = `audio/${sampleIdx.toString()}`;
+    const AUDIO_PATH = `audio/${type}/${sampleIdx.toString()}`;
     const audioOptions = {
         'Observed': `${AUDIO_PATH}/observed.wav`,
         'Clean': `${AUDIO_PATH}/clean.wav`,
-        'Enhanced (simultaneous)': `${AUDIO_PATH}/enhanced_simult.wav`,
-        'Enhanced (two-steps)': `${AUDIO_PATH}/enhanced_two.wav`,
+        'Deep Filter Net 3': `${AUDIO_PATH}/dfn.wav`,
+        'GTCRN': `${AUDIO_PATH}/gtcrn.wav`,
+        'Ours (simultaneous)': `${AUDIO_PATH}/ours_simult.wav`,
+        'Ours (two-steps)': `${AUDIO_PATH}/ours_two.wav`,
     };
     
     return audioOptions
