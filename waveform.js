@@ -1,3 +1,6 @@
+import WaveSurfer from 'wavesurfer.js'
+import Spectrogram from 'wavesurfer.js/dist/plugins/spectrogram.esm.js'
+
 export function createWaveformVisualization(sampleIdx) {
     const samplesTable = document.getElementById('audio-samples-table');
     // Create a new row
@@ -51,7 +54,7 @@ function getSingleWaveform(audioOptions) {
         height: 200,
         splitChannels: true,
         scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
-        frequencyMax: 8000,
+        frequencyMax: 24000,
         frequencyMin: 0,
         fftSamples: 1024,
         labelsBackground: 'rgba(0, 0, 0, 0.1)',
