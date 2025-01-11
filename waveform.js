@@ -47,10 +47,10 @@ function getSingleWaveform(audioOptions) {
     wavesurfer.registerPlugin(
         WaveSurfer.Spectrogram.create({
         labels: true,
-        height: 200,
+        height: 100,
         splitChannels: true,
         scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
-        frequencyMax: 24000,
+        // frequencyMax: 24000,
         frequencyMin: 0,
         fftSamples: 1024,
         labelsBackground: 'rgba(0, 0, 0, 0.1)',
