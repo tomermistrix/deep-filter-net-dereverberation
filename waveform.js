@@ -1,6 +1,3 @@
-// import WaveSurfer from './node_modules/wavesurfer.js';
-// import Spectrogram from './node_modules/wavesurfer.js/dist/plugins/spectrogram.esm.js'
-
 export function createWaveformVisualization(sampleIdx) {
     const samplesTable = document.getElementById('audio-samples-table');
     // Create a new row
@@ -44,29 +41,22 @@ function getSingleWaveform(audioOptions) {
         barGap: 1,
         // And the bar radius
         barRadius: 2,
-        plugins: [
-            WaveSurfer.spectrogram.create({
-                wavesurfer: wavesurfer,
-                container: waveformContainer,
-                labels: true,
-                height: 256,
-            })
-        ]
       })
     
     // Initialize the Spectrogram plugin
-//     wavesurfer.registerPlugin(
-//         Spectrogram.create({
-//         labels: true,
-//         height: 200,
-//         splitChannels: true,
-//         scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
-//         frequencyMax: 24000,
-//         frequencyMin: 0,
-//         fftSamples: 1024,
-//         labelsBackground: 'rgba(0, 0, 0, 0.1)',
-//         }),
-//   )
+    wavesurfer.registerPlugin(
+        WaveSurfer.Spectrogram.create({
+        labels: true,
+        height: 200,
+        splitChannels: true,
+        scale: 'mel', // or 'linear', 'logarithmic', 'bark', 'erb'
+        frequencyMax: 24000,
+        frequencyMin: 0,
+        fftSamples: 1024,
+        labelsBackground: 'rgba(0, 0, 0, 0.1)',
+        }),
+  )
+
     const optionsContainer = document.createElement('div');
 
     Object.keys(audioOptions).forEach(option => {
